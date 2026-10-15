@@ -1,0 +1,2 @@
+// The latest release, shown on both pages. scripts/publish_release.sh rewrites this file on every release (size 0 = unknown: the size is hidden).
+window.PHANTFOCUS_RELEASE = {"version":"0.2.0","size":0,"published":"2026-10-15","minimum_macos":"13.0","download":"https://github.com/megamind-rgb/phantfocus/releases/latest/download/PHANTFOCUS.zip","notes_url":"https://github.com/megamind-rgb/phantfocus/releases/tag/v0.2.0"};

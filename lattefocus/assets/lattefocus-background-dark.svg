@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="5120" height="3200" viewBox="0 0 2560 1600" role="img" aria-labelledby="title desc">
+  <title id="title">Whisper Silk · evening</title>
+  <desc id="desc">Muted rose silk with two broad, softly shaded folds and a pearl highlight. Resolution independent artwork.</desc>
+  <defs>
+    <filter id="silk-softness" x="-10%" y="-15%" width="120%" height="130%" color-interpolation-filters="sRGB"><feGaussianBlur stdDeviation="24"/></filter>
+    <linearGradient id="base" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#3d3039"/>
+      <stop offset=".3" stop-color="#392d37"/>
+      <stop offset=".6" stop-color="#342934"/>
+      <stop offset="1" stop-color="#2e2430"/>
+    </linearGradient>
+    <linearGradient id="upper" x1="0" y1="0" x2="0" y2="1">
+      <stop offset=".30" stop-color="#9b7d91" stop-opacity="0"/>
+      <stop offset=".40" stop-color="#9b7d91" stop-opacity=".08"/>
+      <stop offset=".48" stop-color="#9b7d91" stop-opacity=".28"/>
+      <stop offset=".54" stop-color="#9b7d91" stop-opacity=".52"/>
+      <stop offset=".585" stop-color="#9b7d91" stop-opacity=".66"/>
+      <stop offset=".605" stop-color="#8a6e85" stop-opacity=".48"/>
+      <stop offset=".63" stop-color="#17131d" stop-opacity=".23"/>
+      <stop offset=".665" stop-color="#17131d" stop-opacity=".14"/>
+      <stop offset=".715" stop-color="#17131d" stop-opacity=".035"/>
+      <stop offset=".76" stop-color="#17131d" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="lower" x1="0" y1="0" x2="0" y2="1">
+      <stop offset=".12" stop-color="#9b7d91" stop-opacity="0"/>
+      <stop offset=".21" stop-color="#9b7d91" stop-opacity=".07"/>
+      <stop offset=".285" stop-color="#9b7d91" stop-opacity=".27"/>
+      <stop offset=".345" stop-color="#9b7d91" stop-opacity=".48"/>
+      <stop offset=".38" stop-color="#9b7d91" stop-opacity=".61"/>
+      <stop offset=".405" stop-color="#72596e" stop-opacity=".3"/>
+      <stop offset=".43" stop-color="#100d17" stop-opacity=".20"/>
+      <stop offset=".47" stop-color="#100d17" stop-opacity=".12"/>
+      <stop offset=".53" stop-color="#100d17" stop-opacity=".025"/>
+      <stop offset=".59" stop-color="#100d17" stop-opacity="0"/>
+    </linearGradient>
+    <radialGradient id="pearl">
+      <stop stop-color="#9c7f94" stop-opacity=".27"/>
+      <stop offset=".5" stop-color="#9c7f94" stop-opacity=".1"/>
+      <stop offset="1" stop-color="#9c7f94" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="2560" height="1600" fill="url(#base)"/>
+  <ellipse cx="960" cy="136" rx="2368" ry="1160" fill="url(#upper)" filter="url(#silk-softness)" transform="rotate(17 960 136)"/>
+  <ellipse cx="1152" cy="1664" rx="2304" ry="880" fill="url(#lower)" filter="url(#silk-softness)" transform="rotate(17 1152 1664)"/>
+  <ellipse cx="1120" cy="660" rx="1680" ry="1050" fill="url(#pearl)"/>
+</svg>
