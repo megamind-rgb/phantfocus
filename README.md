@@ -2,7 +2,7 @@
 
 The public download site for PHANTFOCUS, hosted on GitHub Pages from the
 `main` branch of [megamind-rgb/phantfocus](https://github.com/megamind-rgb/phantfocus):
-https://megamind-rgb.github.io/phantfocus/
+https://phantfocus.com/
 
 ## What's here
 
