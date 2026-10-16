@@ -1,39 +1,28 @@
 # PHANTFOCUS website
 
-The public download site, hosted on GitHub Pages from the `main` branch of
-[megamind-rgb/phantfocus](https://github.com/megamind-rgb/phantfocus):
-
-| Page | Address |
-| --- | --- |
-| PHANTFOCUS (Winter Arc look) | https://megamind-rgb.github.io/phantfocus/ |
-| lattefocus (the pink look) | https://megamind-rgb.github.io/phantfocus/lattefocus/ |
-
-Both pages sell the same app and the same download: PHANTFOCUS, with both
-looks inside (Settings > Look). Each page links to the other.
+The public download site for PHANTFOCUS, hosted on GitHub Pages from the
+`main` branch of [megamind-rgb/phantfocus](https://github.com/megamind-rgb/phantfocus):
+https://megamind-rgb.github.io/phantfocus/
 
 ## What's here
 
 | | |
 | --- | --- |
-| `index.html`, `style.css`, `app.js`, `assets/` | The PHANTFOCUS page: black silk, chrome, clear glass |
-| `lattefocus/` | The lattefocus page, with its own `index.html`, `style.css`, `app.js` and `assets/` |
-| `release.js` | The latest release (version, size, download link, release notes link), shared by both pages |
-| `404.html` | Shown by GitHub Pages for any missing address. Self-contained: inline style, full links home |
+| `index.html`, `style.css`, `app.js`, `assets/` | The page: black silk, chrome, clear glass |
+| `release.js` | The latest release (version, size, download link, release notes link) |
+| `404.html` | Shown by GitHub Pages for any missing address. Self-contained: inline style, a full link home |
 | `.nojekyll` | Tells GitHub Pages to serve the files as they are |
 
 No build step, no packages, no external fonts, no analytics. The dashboard on
-each page is a browser demo with sample activity: it never touches the Mac.
+the page is a browser demo with sample activity: it never touches the Mac.
 
 Links between site files are relative, so the site works under `/phantfocus/`
 on GitHub Pages, from a local server and straight from the disk (`file://`).
-The links between the two pages name the page (`lattefocus/index.html`,
-`../index.html`), not the folder: from the disk a folder link opens a file
-listing.
 Full addresses appear only where they must: `404.html` (GitHub Pages shows it
 at whatever address was missing) and the `canonical` and Open Graph tags,
-which point at the live pages and at each page's `assets/social-preview.jpg`
-(the 1200 × 630 picture shown when someone shares the link). Those two
-pictures are screenshots of the pages; retake them if the pages' look changes.
+which point at the live page and at `assets/social-preview.jpg` (the
+1200 × 630 picture shown when someone shares the link). That picture is a
+screenshot of the page; retake it if the page's look changes.
 
 ## The download and the release details
 
@@ -47,7 +36,7 @@ never need editing. The site itself never holds the zip.
 `release.js` is one line, `window.PHANTFOCUS_RELEASE = {...}`, with
 `version`, `size` (bytes; `0` means unknown and hides the size), `published`,
 `minimum_macos`, `download` and `notes_url`. It is a script rather than a JSON
-file so it also loads from `file://`. Each page loads it before `app.js`, and
+file so it also loads from `file://`. The page loads it before `app.js`, and
 `app.js` fills in these elements:
 
 | Marked with | Gets |
@@ -59,26 +48,24 @@ file so it also loads from `file://`. Each page loads it before `app.js`, and
 | `data-release="minimum"` | `macOS 13+` |
 | `data-release="notes"` | `href` = `notes_url` (the "What's new" links) |
 
-Without `release.js` (or without JavaScript) the pages keep the words written
+Without `release.js` (or without JavaScript) the page keeps the words written
 in the HTML, such as "Latest version · macOS 13+ · Apple silicon & Intel", and
 the buttons still download the latest zip.
 
 ## Preview it locally
 
-    cd website
+    cd website/phantfocus
     python3 -m http.server 4173 --bind 127.0.0.1
 
-Then open http://127.0.0.1:4173/ (and http://127.0.0.1:4173/lattefocus/).
-Stop the server with Control-C. Opening `index.html` straight from Finder
-works too, except that Chrome leaves out the lattefocus wordmark there (it is
-a CSS mask, which Chrome loads only over http).
+Then open http://127.0.0.1:4173/ and stop the server with Control-C. Opening
+`index.html` straight from Finder works too.
 
 ## Publish it
 
 Don't copy files to GitHub by hand:
 
-- `scripts/publish_site.sh` publishes this folder to GitHub Pages, for changes
-  to the pages themselves.
+- `scripts/publish_site.sh phantfocus` publishes this folder to GitHub Pages,
+  for changes to the page itself.
 - `scripts/publish_release.sh` publishes a new version of the app: it uploads
   the zip and the update feed to a GitHub release, rewrites `release.js` for
   it and publishes the site.

@@ -1,2 +1,2 @@
-// The latest release, shown on both pages. Written by scripts/publish_release.sh at every release: don't edit it by hand.
-window.PHANTFOCUS_RELEASE = {"version":"0.2.0","size":38994683,"published":"2026-10-15","minimum_macos":"13.0","download":"https://github.com/megamind-rgb/phantfocus/releases/latest/download/PHANTFOCUS.zip","notes_url":"https://github.com/megamind-rgb/phantfocus/releases/tag/v0.2.0"};
+// The latest release, shown on this website. Written by scripts/publish_release.sh at every release: don't edit it by hand.
+window.PHANTFOCUS_RELEASE = {"version":"0.3.0","size":39000359,"published":"2026-10-16","minimum_macos":"13.0","download":"https://github.com/megamind-rgb/phantfocus/releases/latest/download/PHANTFOCUS.zip","notes_url":"https://github.com/megamind-rgb/phantfocus/releases/tag/v0.3.0"};

@@ -63,14 +63,11 @@
 .steps article>div,.section-intro{min-width:0}.small-progress{max-width:100%}
 @media(max-width:760px){.workflow{grid-template-columns:minmax(0,1fr)}}
 
-/* Release details from release.js, the What's new link, the link to lattefocus and the longer FAQ answers. */
+/* Release details from release.js, the What's new link and the longer FAQ answers. */
 [hidden]{display:none!important}
 .compatibility .release-value{margin:0;color:inherit}
 .release-link{text-decoration:underline;text-underline-offset:3px;color:#b6bec9;transition:color .2s}
-.release-link:hover,.site-switch a:hover,.faq details a:hover{color:#fff}
-.site-switch{margin-top:14px;font-size:11px;line-height:1.8;color:#7e8897}
-.site-switch a{margin-inline:4px;text-decoration:underline;text-underline-offset:3px;color:#e2bccd;transition:color .2s}
+.release-link:hover,.faq details a:hover{color:#fff}
 .faq details p:not(:last-child){padding-bottom:12px}
 .faq details a{text-decoration:underline;text-underline-offset:3px;color:#cbd1d9}
-@media(max-width:760px){.site-switch{font-size:12px}}
 @media(max-width:520px){.download-guide{margin:20px 0}.download-guide li{margin-top:15px}}
