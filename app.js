@@ -114,36 +114,13 @@
   }
   $$('[data-range]').forEach((button) => button.addEventListener('click', () => paintChart(button.dataset.range)));
   paintChart('week');
-  // A link to a question (#install-question, #update-question) opens its answer.
+  // A link to a question (for example #offer-question) opens its answer.
   function showLinkedQuestion() {
     const target = location.hash.length > 1 && document.getElementById(location.hash.slice(1));
     if (target instanceof HTMLDetailsElement) target.open = true;
   }
-  $$('a[href="#install-question"]').forEach(link => link.addEventListener('click', () => { $('#install-question').open = true; }));
   window.addEventListener('hashchange', showLinkedQuestion);
   showLinkedQuestion();
-  // The release details come from release.js, which scripts/publish_release.sh rewrites
-  // for every release. Without it the page keeps the wording written in the HTML.
-  function showRelease(release) {
-    if (!release || typeof release !== 'object') return;
-    const isWebLink = (url) => typeof url === 'string' && url.startsWith('https://');
-    const version = /^\d+(\.\d+){0,3}$/.test(release.version) ? `v${release.version}` : '';
-    const minimum = /^\d+(\.\d+)*$/.test(release.minimum_macos) ? `macOS ${release.minimum_macos.replace(/(\.0)+$/, '')}+` : '';
-    const size = Number(release.size) > 0 ? `${(Number(release.size) / 1e6).toFixed(1)} MB` : '';
-    if (isWebLink(release.download)) $$('[data-release-link]').forEach(link => { link.href = release.download; });
-    if (isWebLink(release.notes_url)) $$('[data-release="notes"]').forEach(link => { link.href = release.notes_url; });
-    if (version) $$('[data-release="version"]').forEach(node => { node.textContent = version; });
-    if (minimum) $$('[data-release="minimum"]').forEach(node => { node.textContent = minimum; });
-    // Size 0 means unknown: the size, and the separator kept with it, stay hidden.
-    $$('[data-release="size"]').forEach(node => { node.textContent = size; });
-    $$('[data-release-if="size"]').forEach(node => { node.hidden = !size; });
-  }
-  showRelease(window.PHANTFOCUS_RELEASE);
-  // The download goes on in the background (the zip is on GitHub, so the page stays);
-  // meanwhile the guide says how to open it the first time.
-  $$('[data-release-link]').forEach(link => link.addEventListener('click', () => {
-    $('#download-dialog').showModal();
-  }));
   document.addEventListener('visibilitychange', () => {
     if (!document.hidden && deadline) tick();
   });
